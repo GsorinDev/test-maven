@@ -1,17 +1,12 @@
-pipeline {
+node{
     agent any
-
-    tools {
-        maven 'Maven' // Assuming 'Maven' is the name you configured in Jenkins Global Tool Configuration
+    stage('Get from git project')
+    {
+        git 'https://github.com/GsorinDev/test-maven.git'
     }
-
-    stages {
-        stage('Run test') {
-            steps {
-                script {
-                    sh 'mvn test'
-                }
-            }
-        }
+    
+    stage('Compile then package')
+    {
+        sh 'mvn package'
     }
 }
