@@ -1,12 +1,27 @@
-node{
-    agent any
-    stage('Get from git project')
-    {
+
+pipeline {
+  
+          agent any
+
+          tools {
+            maven 'maven'
+          }
+
+          stages{
+            stage('Get from git project'){
+  steps {
         git 'https://github.com/GsorinDev/test-maven.git'
     }
-    
-    stage('Compile then package')
-    {
-        sh 'mvn package'
-    }
+
+            stage('Create a new .jar') {
+
+                steps {
+                    
+                   sh 'mvn clean install -DskipTests'
+                
+                      }
+
+          
+            }
+}
 }
