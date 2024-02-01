@@ -1,0 +1,26 @@
+# Dossiers Maven
+target/
+bin/
+.idea/
+
+# Fichiers Maven
+*.iml
+*.iws
+*.ipr
+
+# Fichiers de configuration Maven
+mvnw
+mvnw.cmd
+
+# Fichiers de configuration Eclipse
+.settings/
+.classpath
+.project
+
+# Fichiers de configuration IntelliJ
+*.iml
+*.iws
+*.ipr
+
+# Fichiers de sauvegarde
+*~
